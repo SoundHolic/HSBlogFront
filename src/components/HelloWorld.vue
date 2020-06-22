@@ -8,7 +8,7 @@
         <md-input v-model="noError" required></md-input>
       </md-field>
 
-      <md-field :class="messageClass">
+      <md-field>
         <md-icon>secret</md-icon>
         <label>密码</label>
         <md-input v-model="required" required type='password'></md-input>
@@ -39,14 +39,16 @@
 <style scoped>
   .hello {
     margin: 100px auto;
-    width: 50%;
+    width: 80%;
   }
 
   .hsRemeberMe {
     margin: 10px 0px 0px 40px;
   }
 
-  .hsbtn,
+  .hsbtn {
+    margin: 10px 0px 0px 30px;
+  }
   .hstitle {
     margin: 10px auto;
     text-align: center;

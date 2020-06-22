@@ -3,19 +3,18 @@
     <div>
       <md-toolbar class="md-transparent">
         <md-button class="md-icon-button">
-<md-icon class="md-warn">home</md-icon>
+          <md-icon class="md-warn">home</md-icon>
         </md-button>
 
-        <h2 class="md-title" style="flex: 1">Vue Material</h2>
+        <h2 class="md-title" style="flex: 1">HS for Me</h2>
 
-        <md-button class="md-raised">增加</md-button>
-        <md-button class="md-raised md-warn">移除</md-button>
-        <md-button class="md-icon-button">
-          <md-icon>favorite</md-icon>
-        </md-button>
+        <md-button class="md-raised">找回密码</md-button>
+        <md-button class="md-raised md-warn">注册</md-button>
       </md-toolbar>
     </div>
-    <router-view />
+    <div class="hsbody">
+      <router-view />
+    </div>
   </div>
 </template>
 
@@ -30,13 +29,14 @@
     margin: 0;
     padding: 0;
   }
+
   @font-face {
     font-family: 'Material Icons';
     font-style: normal;
     font-weight: 400;
     src: url(https://fonts.gstatic.com/s/materialicons/v52/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
   }
-  
+
   .material-icons {
     font-family: 'Material Icons';
     font-weight: normal;
@@ -51,5 +51,8 @@
     direction: ltr;
     -webkit-font-feature-settings: 'liga';
     -webkit-font-smoothing: antialiased;
+  }
+  body{
+    background-image: url(assets/logo.png);
   }
 </style>
