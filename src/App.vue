@@ -10,6 +10,9 @@
 
             <router-link to="/"><span class="md-title">My Title</span></router-link>
             <div class="md-toolbar-section-end">
+              <router-link to="/login">
+                <md-button>登录</md-button>
+              </router-link>
               <router-link to="/forget">
                 <md-button>找回密码</md-button>
               </router-link>
@@ -70,9 +73,6 @@
     data: () => ({
       menuVisible: false
     }),
-    created(){
-        this.$store.dispatch('getUser');
-    }
   }
 </script>
 

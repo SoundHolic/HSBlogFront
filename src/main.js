@@ -13,6 +13,24 @@ import 'vue-material/dist/theme/default.css'
 Vue.use(VueMaterial)
 Vue.use(Vuex)
 
+var state = {
+  isLogin:0
+};
+const mutations = {
+  changeLogin(state,data){
+    state.isLogin = data
+  }
+}
+
+router.beforeEach((to,from,next)=>{
+  if(sessionStorage.getItem('accessToken')){
+    next()
+  }else if(to.path == '/sign'){
+    next()
+  }else{
+    next({path:'/sign'})
+  }
+})
 
 /* eslint-disable no-new */
 new Vue({
