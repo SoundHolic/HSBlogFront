@@ -1,10 +1,10 @@
 <template>
   <div class="hello">
-    <form>
+    <form >
       <h1 class="hstitle">登录</h1>
       <md-field>
         <md-icon>user</md-icon>
-        <label>用户名</label>
+        <label>用户名/手机号</label>
         <md-input v-model="noError" required></md-input>
       </md-field>
 
@@ -37,7 +37,7 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .hello {
+ .hello {
     margin: 100px auto;
     width: 80%;
   }

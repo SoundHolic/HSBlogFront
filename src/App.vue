@@ -1,34 +1,118 @@
 <template>
   <div id="app">
-    <div>
-      <md-toolbar class="md-transparent">
-        <md-button class="md-icon-button">
-          <md-icon class="md-warn">home</md-icon>
-        </md-button>
+    <div class="page-container">
+      <md-app md-waterfall md-mode="overlap">
+        <md-app-toolbar class="md-primary md-large">
+          <div class="md-toolbar-row">
+            <md-button class="md-icon-button" @click="menuVisible = !menuVisible">
+              <md-icon>menu</md-icon>
+            </md-button>
 
-        <h2 class="md-title" style="flex: 1">HS for Me</h2>
+            <router-link to="/"><span class="md-title">My Title</span></router-link>
+            <div class="md-toolbar-section-end">
+              <router-link to="/forget">
+                <md-button>找回密码</md-button>
+              </router-link>
+              <router-link to="/register">
+                <md-button>注册</md-button>
+              </router-link>
+            </div>
+          </div>
+        </md-app-toolbar>
 
-        <md-button class="md-raised">找回密码</md-button>
-        <md-button class="md-raised md-warn">注册</md-button>
-      </md-toolbar>
-    </div>
-    <div class="hsbody">
-      <router-view />
+        <md-app-drawer :md-active.sync="menuVisible">
+          <md-toolbar class="md-transparent" md-elevation="0">
+            Navigation
+          </md-toolbar>
+
+          <md-list>
+            <router-link to="/index">
+              <md-list-item>
+                <md-icon>home</md-icon>
+                <span class="md-list-item-text">首页</span>
+              </md-list-item>
+            </router-link>
+            <md-list-item>
+              <md-icon>move_to_inbox</md-icon>
+              <span class="md-list-item-text">归档</span>
+            </md-list-item>
+
+            <md-list-item>
+              <md-icon>send</md-icon>
+              <span class="md-list-item-text">邮箱</span>
+            </md-list-item>
+
+            <md-list-item>
+              <md-icon>delete</md-icon>
+              <span class="md-list-item-text">废弃站</span>
+            </md-list-item>
+
+            <md-list-item>
+              <md-icon>error</md-icon>
+              <span class="md-list-item-text">关于</span>
+            </md-list-item>
+          </md-list>
+        </md-app-drawer>
+        <md-app-content>
+          <router-view />
+        </md-app-content>
+      </md-app>
     </div>
   </div>
 </template>
 
+
+
+
 <script>
   export default {
-    name: 'App'
+    name: 'App',
+    data: () => ({
+      menuVisible: false
+    }),
+    created(){
+        this.$store.dispatch('getUser');
+    }
   }
 </script>
 
 <style>
-  #app {
+  html,
+  body {
+    height: 100%;
     margin: 0;
     padding: 0;
   }
+
+  #app {
+    height: 100%;
+  }
+
+  .md-app {
+    border: 1px solid rgba(#000, .12);
+    height: 100%;
+  }
+
+  // Demo purposes only
+  .md-drawer {
+    width: 230px;
+    max-width: calc(100vw - 125px);
+  }
+
+  .md-app-content {
+    padding: 16px;
+    min-height: 100%;
+    padding-bottom: 300px;
+  }
+  .page-container {
+    height: 100%;
+    min-height: 700px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(#000, .12);
+  }
+
+
 
   @font-face {
     font-family: 'Material Icons';
@@ -51,8 +135,5 @@
     direction: ltr;
     -webkit-font-feature-settings: 'liga';
     -webkit-font-smoothing: antialiased;
-  }
-  body{
-    background-image: url(assets/logo.png);
   }
 </style>
