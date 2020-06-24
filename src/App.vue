@@ -8,24 +8,13 @@
               <md-icon>menu</md-icon>
             </md-button>
 
-            <router-link to="/"><span class="md-title">My Title</span></router-link>
-            <div class="md-toolbar-section-end">
-              <router-link to="/login">
-                <md-button>登录</md-button>
-              </router-link>
-              <router-link to="/forget">
-                <md-button>找回密码</md-button>
-              </router-link>
-              <router-link to="/register">
-                <md-button>注册</md-button>
-              </router-link>
-            </div>
+            <router-link to="/"><span class="md-title">April 14th</span></router-link>
           </div>
         </md-app-toolbar>
 
         <md-app-drawer :md-active.sync="menuVisible">
           <md-toolbar class="md-transparent" md-elevation="0">
-            Navigation
+            功能列表
           </md-toolbar>
 
           <md-list>
