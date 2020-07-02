@@ -5,12 +5,7 @@
         <form>
           <md-field>
             <md-icon>person</md-icon>
-            <label>用户名</label>
-            <md-input v-model="noError" required></md-input>
-          </md-field>
-          <md-field>
-            <md-icon>phone_iphone</md-icon>
-            <label>手机号</label>
+            <label>用户名/手机</label>
             <md-input v-model="noError" required></md-input>
           </md-field>
           <md-field>
@@ -38,13 +33,17 @@
             <md-input v-model="noError" required></md-input>
           </md-field>
           <md-field>
+            <md-icon>mail</md-icon>
+            <label>邮箱</label>
+            <md-input v-model="noError" required></md-input>
+          </md-field>
+          <md-field>
             <md-icon>lock</md-icon>
             <label>密码</label>
             <md-input v-model="required" required type='password'></md-input>
           </md-field>
-          <md-switch v-model="hasMessages" >记住密码</md-switch>
           <div>
-            <md-button class="md-raised" type="submit">登录</md-button>
+            <md-button class="md-raised" type="submit">注册</md-button>
             <md-button class="md-raised" type="reset">重置</md-button>
           </div>
         </form>
